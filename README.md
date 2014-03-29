@@ -2,7 +2,7 @@
 [![Dependency Status](https://gemnasium.com/Todd-Werelius/connect-fragment.png)](https://gemnasium.com/Todd-Werelius/express-snapshot-static)
 [![NPM version](https://badge.fury.io/js/connect-fragment.png)](http://badge.fury.io/js/express-snapshot-static)
 
-# express-static-fragment
+# express-snapshot-static
 
 Middleware for connect and express.  Serves pre-built snapshots to the google bot if the
 _escaped_fragment_ is found in the request query, this is useful if you are building single page apps with MV*
@@ -12,7 +12,21 @@ frameworks such as AngularJS etc.  This module does NOT construct the snapshots,
 
 	  $ npm install express-snapshot-static
 
+## Purpose
+
+Serves already existing 'snapshots' from a node.app when the bot makes a fragment request instead of the unrendered source html file. 
+
+MORE...
+
+If you are writing a SPA ( Single Page Application ) based on a MV* framework such as angularJS then search bot's, such as google-bot or bing-bot, will not index your pages properly since the javascript in your pages never runs and renderes the page properly. 
+
+One way to deal with this is to pre-generate 'snapshots' of your fully rendered SPA partials/pages and either use the /#!/ routing syntax ex: http://mysite.com/#!/about, or include a <meta name="fragment" content="!"> ( this is always the same signature for every page ) in your SPA partials. 
+
+Either of the above will result in the bot issuing a get with the _escaped_fragment_ query_ parameter set to your route for the page the bot wants ex: _escaped_fragment_ query=/about 
+
+
 ## Options
+
 ```javascript
     var options = {
     	
@@ -25,7 +39,7 @@ connect-fragment(file,options)
 
 
 ```javascript
-var botHandler = require('snapshot-static');
+var botHandler = require('express-snapshot-static');
 var htmlFolder = __dirname;
 var snapFolder = path.join(__dirname + '/snapshots'));
 var options    = {
@@ -38,7 +52,7 @@ connect().use(botHandler(htmlFolder,snapFolder,options);
 // Express usage
 var app = express();
 
-
+// Should be the first middleware handler for GET's in the stack
 app.use(botHandler(htmlFolder,snapFolder,options));
 
 ```
