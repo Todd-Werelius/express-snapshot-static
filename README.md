@@ -1,6 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/Todd-Werelius/connect-fragment.png)](http://travis-ci.org/Todd-Werelius/express-snapshot-static)
 [![Dependency Status](https://gemnasium.com/Todd-Werelius/connect-fragment.png)](https://gemnasium.com/Todd-Werelius/express-snapshot-static)
-[![NPM version](https://badge.fury.io/js/express-snapshot-static.png)](http://badge.fury.io/js/express-snapshot-static)
+[![NPM version](https://badge.fury.io/gh/todd-werelius%2Fexpress-snapshot-static.png)](http://badge.fury.io/js/express-snapshot-static)
 
 # express-snapshot-static
 
