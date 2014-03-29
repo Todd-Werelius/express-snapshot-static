@@ -1,5 +1,5 @@
 {
-  "name": "connect-snapshot-static",
+  "name": "express-snapshot-static",
   "version": "0.0.1",
   "description": "Serves pre-rendered static html 'snapshots' if the _escaped_fragment_ query parameter is found",
   "main": "index.js",
