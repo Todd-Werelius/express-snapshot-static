@@ -1,0 +1,44 @@
+{
+  "name": "connect-snapshot-static",
+  "version": "0.0.1",
+  "description": "Serves pre-rendered static html 'snapshots' if the _escaped_fragment_ query parameter is found",
+  "main": "index.js",
+  "scripts": {
+    "test": "make lint test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Todd-Werelius/snapshot-static"
+  },
+  "keywords": [
+    "connect",
+    "middleware",
+    "fragment",
+    "seo",
+    "snapshots",
+    "spa",
+    "angularjs",
+    "_escaped_fragment_"
+  ],
+  "author": {
+    "name": "Todd Werelius",
+    "email": "Todd.Werelius@Mopholo.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Todd-Werelius/connect-snapshot-static/issues"
+  },
+  "dependencies": {
+    "send": "~0",
+    "async": "~0.2.10"
+  },
+  "devDependencies": {
+    "jshint": "~2.1.10",
+    "mocha": "~1.13.0"
+  },
+  "readme": "",
+  "readmeFilename": "Readme.md",
+  "homepage": "https://github.com/Todd-Werelius/connect-snapshot-static",
+  "_id": "connect-snapshot-static@0.0.1",
+  "_from": "connect-snapshot-static@~0.0.1"
+}
