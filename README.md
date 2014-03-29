@@ -1,23 +1,23 @@
-[![Build Status](https://secure.travis-ci.org/Todd-Werelius/connect-fragment.png)](http://travis-ci.org/Todd-Werelius/fragment-static)
-[![Dependency Status](https://gemnasium.com/Todd-Werelius/connect-fragment.png)](https://gemnasium.com/Todd-Werelius/fragment-static)
-[![NPM version](https://badge.fury.io/js/connect-fragment.png)](http://badge.fury.io/js/connect-fragment)
+[![Build Status](https://secure.travis-ci.org/Todd-Werelius/connect-fragment.png)](http://travis-ci.org/Todd-Werelius/express-snapshot-static)
+[![Dependency Status](https://gemnasium.com/Todd-Werelius/connect-fragment.png)](https://gemnasium.com/Todd-Werelius/express-snapshot-static)
+[![NPM version](https://badge.fury.io/js/connect-fragment.png)](http://badge.fury.io/js/express-snapshot-static)
 
-# connect-fragment
+# express-static-fragment
 
-Middleware for [connect][]: express.  Serves pre-built snapshots to the google bot if it finds
-_escaped_fragment_ in the request query, this is useful if you are building single page apps with MV*
-frameworks such as AngularJS etc.
+Middleware for connect and express.  Serves pre-built snapshots to the google bot if the
+_escaped_fragment_ is found in the request query, this is useful if you are building single page apps with MV*
+frameworks such as AngularJS etc.  This module does NOT construct the snapshots, it just serves them. 
 
 ## Installation
 
-	  $ npm install connect-fragment
+	  $ npm install express-snapshot-static
 
 ## Options
-    zip       : number    0 = don't look for zipped file
-                          1 = look for zipped file by adding ext (default .gz) and fail if not found
-                          2 = look for zipped file by adding ext (default .gz) look for uncompressed if not found
-    zExt      : string    zip extension ( Default gz)
-
+```javascript
+    var options = {
+    	
+    }	
+```
 
 ## Usage
 
@@ -25,22 +25,21 @@ connect-fragment(file,options)
 
 
 ```javascript
-var botHandler = require('connect-fragment');
-var file       = path.join(__dirname + '/snapshot'));
+var botHandler = require('snapshot-static');
+var htmlFolder = __dirname;
+var snapFolder = path.join(__dirname + '/snapshots'));
 var options    = {
-        zip  :   2,  // Look for zip first, then non-compressed
-        ext  : 'gz'  // append .gz to name 'gz' is the default so this is not nessecary unless you use something else
+        ...
 }
 
-// Direct connect usage
-connect().use(botHandler(file,options);
+// Connect usage
+connect().use(botHandler(htmlFolder,snapFolder,options);
 
 // Express usage
 var app = express();
-.
-.
-.
-app.use(botHandler(file,options));
+
+
+app.use(botHandler(htmlFolder,snapFolder,options));
 
 ```
 
@@ -48,5 +47,4 @@ app.use(botHandler(file,options));
 
 MIT
 
-[connect]: http://www.senchalabs.org/connect
-[connect static]: http://www.senchalabs.org/connect/static.html
+
