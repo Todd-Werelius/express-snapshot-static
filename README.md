@@ -42,10 +42,11 @@ app.use(botHandler(htmlFolder,snapFolder,options));
 
 ## Options
 
-A number of options allow you to configure how express-static snapshot works.  For the most part you can just use the default options by not passing anything to the function.
+A number of options allow you to configure how express-static snapshot works.  For the most part you can just use the default options by not passing anything to the function. See examples of custom snapResolver and logger below
 
 ```javascript
     var options = {
+    
        sendSource      : false;                // As a last resort send the source html vs. the snapshot, if issue 
                                                // tracking is on this will be reported 
        snapResolver    : null;                 // Custom snapshot path/file resolver ( default duplicates source
@@ -57,7 +58,7 @@ A number of options allow you to configure how express-static snapshot works.  F
                                                // typcially ( index.html )
        
        routeMissingErr : 404,                  // If the snapshot is missing we just report 404, but if source html 
-       					       		// also missing we don't have a route so report 404 as well  
+                                               // also missing we don't have a route so report 404 as well  
                                                // but alternatively you could report 410 that would tell bot not 
                                                // to try again
        
@@ -70,6 +71,25 @@ A number of options allow you to configure how express-static snapshot works.  F
        maxAge          : 0;                    // How long should browser cache live even if file didn't change	
     }	
 ```
+
+###Custom snapResolver 
+The default resolver is repsonsible for 'finding' snapshots based on the source route. Typcially servers will resolve http://mysite.com/about resolves to something like /public/about.html 
+
+When a snapshot is requested the snapResolver takes that path and file names and replaces /public (or whatever your root source folder is) and replaces it with the snapFolder your provided when you added the express-snapshot-static middleware into your application. 
+
+Default behavior
+
+Route				Server				Snapshot
+http://mysite.com/about		/public/about.html		/snapshots/about.html	
+http://mysite.com/user/profile	/public/user/profile.html	/snapshots/user/about.html
+
+If instead you wanted a flat directory stucture with mappings for your routes like this example 
+
+Route				Server				Snapsho
+http://mysite.com/user/profile	/public/user/profile.html	/snapshots/snapshot_user-about.html
+
+You would need to provide your own snapResolved add it to the options object. 
+
 
 ## License 
 
