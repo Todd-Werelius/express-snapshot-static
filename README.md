@@ -1,4 +1,5 @@
 [![Build Status](https://secure.travis-ci.org/Todd-Werelius/express-snapshot-static.png)](http://travis-ci.org/Todd-Werelius/express-snapshot-static)
+[![Coverage Status](https://coveralls.io/repos/Todd-Werelius/express-snapshot-static/badge.png)](https://coveralls.io/r/Todd-Werelius/express-snapshot-static)
 [![Dependency Status](https://gemnasium.com/Todd-Werelius/express-snapshot-static.svg)](https://gemnasium.com/Todd-Werelius/express-snapshot-static)
 [![NPM version](https://badge.fury.io/gh/todd-werelius%2Fexpress-snapshot-static.png)](http://badge.fury.io/js/express-snapshot-static)
 
