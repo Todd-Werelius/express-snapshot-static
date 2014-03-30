@@ -47,9 +47,9 @@ A number of options allow you to configure how express-static snapshot works.  F
 ```javascript
     var options = {
     
-       sendSource      : false;                // As a last resort send the source html vs. the snapshot, if issue 
+       sendSource      : false,                // As a last resort send the source html vs. the snapshot, if issue 
                                                // tracking is on this will be reported 
-       snapResolver    : null;                 // Custom snapshot path/file resolver ( default duplicates source
+       snapResolver    : null,                 // Custom snapshot path/file resolver ( default duplicates source
                                                // path/filename ) user may supply own resolver to customize name lookup 
        
        ext             : '.html',              // If the route does not end in / and has no extension then 
@@ -64,6 +64,7 @@ A number of options allow you to configure how express-static snapshot works.  F
        
        logger          : this.consoleLogger,   // Our default internal console logger to report request issues 
        					       // can be replaced with users own custom logger function
+       					       
        log             : false,                // If set to true code will store issues like missing source roots
                                                // uncompressed snapshots etc. and output any issues to the logger, 
                                                // you should only use to debug! 
