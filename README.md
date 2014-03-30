@@ -18,26 +18,30 @@ See my [AngularJS SEO Explained](http://mofodv.com/anfularjs-seo) blog post if y
 
 ## Usage
 
+### Setup
 ```javascript
-var botHandler   = require('express-snapshot-static');
-var sourceFolder = __dirname;
-var snapFolder   = path.join(__dirname + '/snapshots'));
-var options      = {
-        ...
-}
+var botHandler   = require('express-snapshot-static');     
+var sourceFolder = __dirname;                             // root path you normally serve html from
+var snapFolder   = path.join(__dirname + '/snapshots'));  // root path where your snapshots are stored
+var options      = { }
+```
 
-// Connect usage
+### Connect usage
+```javascript
 connect().use(botHandler(sourceFolder,snapFolder,options);
+```
 
-// Express usage
+### Express usage
+```javascript
 var app = express();
 
-// Should be the first middleware handler for GET's in the stack
 app.use(botHandler(htmlFolder,snapFolder,options));
 
 ```
 
 ## Options
+
+A number of options allow you to configure how express-static snapshot works.  For the most part you can just use the default options by not passing anything to the function.
 
 ```javascript
     var options = {
