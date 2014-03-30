@@ -46,7 +46,21 @@ A number of options allow you to configure how express-static snapshot works.  F
 
 ```javascript
     var options = {
-    	
+       ext             : '.html',              // If the route has no file extension append this
+       index           : 'index' + this.ext,   // If a route ends in / canonical says create default (index.html)
+       routeMissingErr : 404,                  // If source html is Missing we don't have a route, 
+                                               // alternatively using 410 will tell bot not to try again
+       logger          : this.consoleLogger;   // Our default internal console logger to report request issues                                         		       // can be replaced with users own custom logger function
+       log             : false,                // If set to true code will store issues like missing source roots
+                                               // uncompressed snapshots etc. only use to debug! 
+       sendSource      : false;                // As a last resort send the source html vs. the snapshot, if issue 
+                                               // tracking is on this will be reported 
+       
+       snapResolver    : null;                  // Custom snapshot path/file resolver ( default duplicates source
+                                                // path/filename ) user may supply own resolver to create flat 
+                                                // directory snapshots etc.
+       hidden          : false;                 // Process files even if they are hidden ( connect send option )
+       maxAge          : 0;                     // How long should browser cache live even if file didn't change	
     }	
 ```
 
