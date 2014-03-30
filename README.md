@@ -22,8 +22,8 @@ See my [AngularJS SEO Explained](http://mofodv.com/anfularjs-seo) blog post if y
 ### Setup
 ```javascript
 var botHandler   = require('express-snapshot-static');     
-var sourceFolder = __dirname;                             // root path you normally serve html from
-var snapFolder   = path.join(__dirname + '/snapshots'));  // root path where your snapshots are stored
+var sourceFolder = __dirname;                          // root path you normally serve html from
+var snapFolder   = path.join(__dirname,'snapshots'));  // root path you want to serve snapshots fromt
 var options      = { }
 ```
 
@@ -46,21 +46,28 @@ A number of options allow you to configure how express-static snapshot works.  F
 
 ```javascript
     var options = {
-       ext             : '.html',              // If the route has no file extension append this
-       index           : 'index' + this.ext,   // If a route ends in / canonical says appent a filename ( index.html )
-       routeMissingErr : 404,                  // If source html is Missing we don't have a route, 
-                                               // alternatively using 410 will tell bot not to try again
-       logger          : this.consoleLogger;   // Our default internal console logger to report request issues                                         		       // can be replaced with users own custom logger function
-       log             : false,                // If set to true code will store issues like missing source roots
-                                               // uncompressed snapshots etc. only use to debug! 
        sendSource      : false;                // As a last resort send the source html vs. the snapshot, if issue 
                                                // tracking is on this will be reported 
+       snapResolver    : null;                 // Custom snapshot path/file resolver ( default duplicates source
+                                               // path/filename ) user may supply own resolver to customize name lookup 
        
-       snapResolver    : null;                  // Custom snapshot path/file resolver ( default duplicates source
-                                                // path/filename ) user may supply own resolver to create flat 
-                                                // directory snapshots etc.
-       hidden          : false;                 // Process files even if they are hidden ( connect send option )
-       maxAge          : 0;                     // How long should browser cache live even if file didn't change	
+       ext             : '.html',              // If the route does not end in / and has no extension then 
+                                               // canonical behavior is append a 'typical' extension 
+       index           : 'index' + this.ext,   // If a route ends in / canonical behavior si to  append a filename, 
+                                               // typcially ( index.html )
+       
+       routeMissingErr : 404,                  // If the snapshot is missing we just report 404, but if source html 
+       					       		// also missing we don't have a route so report 404 as well  
+                                               // but alternatively you could report 410 that would tell bot not 
+                                               // to try again
+       
+       logger          : this.consoleLogger;   // Our default internal console logger to report request issues                                         		       // can be replaced with users own custom logger function
+       log             : false,                // If set to true code will store issues like missing source roots
+                                               // uncompressed snapshots etc. and output any issues to the logger, 
+                                               // you should only use to debug! 
+       
+       hidden          : false;                // Process files even if they are hidden ( connect send option )
+       maxAge          : 0;                    // How long should browser cache live even if file didn't change	
     }	
 ```
 
