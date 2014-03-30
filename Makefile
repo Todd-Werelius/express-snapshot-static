@@ -1,9 +1,6 @@
-all: lint test
+all: lint
 
 lint:
 	./node_modules/.bin/jshint *.js lib
-
-test:
-	./node_modules/.bin/mocha --recursive
 
 .PHONY: all lint
