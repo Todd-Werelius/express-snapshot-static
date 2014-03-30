@@ -4,7 +4,7 @@
   "description": "Serves pre-rendered static html 'snapshots' if the _escaped_fragment_ query parameter is found",
   "main": "index.js",
   "scripts": {
-    "test": "make lint test"
+    "test": "make lint"
   },
   "repository": {
     "type": "git",
