@@ -62,14 +62,14 @@ A number of options allow you to configure how express-static snapshot works.  F
                                                // but alternatively you could report 410 that would tell bot not 
                                                // to try again
        
-       logger          : this.consoleLogger;   // Our default internal console logger to report request issues 
+       logger          : this.consoleLogger,   // Our default internal console logger to report request issues 
        					       // can be replaced with users own custom logger function
        log             : false,                // If set to true code will store issues like missing source roots
                                                // uncompressed snapshots etc. and output any issues to the logger, 
                                                // you should only use to debug! 
        
-       hidden          : false;                // Process files even if they are hidden ( connect send option )
-       maxAge          : 0;                    // How long should browser cache live even if file didn't change	
+       hidden          : false,                // Process files even if they are hidden ( connect send option )
+       maxAge          : 0,                    // How long should browser cache live even if file didn't change	
     }	
 ```
 
