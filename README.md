@@ -13,7 +13,7 @@ frameworks such as AngularJS etc.  This module does NOT construct the snapshots,
 	  $ npm install express-snapshot-static
 
 ## Tutorial
-See my [AngularJS SEO Explained](http://mofodv/anfularjs-seo) blog post if you need more information
+See my [AngularJS SEO Explained](http://mofodv.com/anfularjs-seo) blog post if you need more information
 
 
 ## Usage
