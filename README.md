@@ -47,7 +47,7 @@ A number of options allow you to configure how express-static snapshot works.  F
 ```javascript
     var options = {
        ext             : '.html',              // If the route has no file extension append this
-       index           : 'index' + this.ext,   // If a route ends in / canonical says create default (index.html)
+       index           : 'index' + this.ext,   // If a route ends in / canonical says appent a filename ( index.html )
        routeMissingErr : 404,                  // If source html is Missing we don't have a route, 
                                                // alternatively using 410 will tell bot not to try again
        logger          : this.consoleLogger;   // Our default internal console logger to report request issues                                         		       // can be replaced with users own custom logger function
