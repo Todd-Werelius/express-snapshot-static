@@ -74,11 +74,11 @@ A number of options allow you to configure how express-static snapshot works.  F
 ```
 
 ###Custom snapResolver 
-The default resolver is repsonsible for 'finding' snapshots based on the source route. Typcially servers will resolve http://mysite.com/about resolves to something like /public/about.html 
+The default snapResolver is repsonsible for 'finding' snapshots based on the source route. Typcially servers will resolve http://mysite.com/about resolves to something like /public/about.html 
 
 When a snapshot is requested the snapResolver takes that path and file names and replaces /public (or whatever your root source folder is) and replaces it with the snapFolder your provided when you added the express-snapshot-static middleware into your application. 
 
-Default behavior
+####Default behavior
 
 Route				Server				Snapshot
 http://mysite.com/about		/public/about.html		/snapshots/about.html	
@@ -89,8 +89,12 @@ If instead you wanted a flat directory stucture with mappings for your routes li
 Route				Server				Snapsho
 http://mysite.com/user/profile	/public/user/profile.html	/snapshots/snapshot_user-about.html
 
-You would need to provide your own snapResolved add it to the options object. 
+A snapResolver simply provides the name mapping and is fairly simple to implement, using our example it would look something like this
 
+```javascript
+
+
+```
 
 ## License 
 
