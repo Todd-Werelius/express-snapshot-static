@@ -98,11 +98,21 @@ A snapResolver simply provides the name mapping and is fairly simple to implemen
 
 ```
 
+##Author Information
+
+###Todd Werelius
+
+<a href="http://www.linkedin.com/in/toddwerelius/">
+<img alt="Follow me on LinkedIn"     src="https://raw.github.com/ManuelPeinado/NumericPageIndicator/master/art/linkedin.png" />
+</a>  
+
+Email : todd.werelius@mopholo.com
+
 ## License 
 
 (The MIT License)
 
-Copyright (c) 2014 Todd Werelius contact &lt;todd.werelius@mopholo.com&gt;
+Copyright (c) 2014 Todd Werelius 
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
