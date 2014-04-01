@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "send": "~0",
-    "async": "~0.4.0"
+    "async": "~0.6.2"
   },
   "devDependencies": {
     "jshint": "~2.4.4",
