@@ -106,7 +106,7 @@ A snapResolver simply provides the name mapping and is fairly simple to implemen
 <img alt="Follow me on LinkedIn"     src="https://raw.github.com/ManuelPeinado/NumericPageIndicator/master/art/linkedin.png" />
 </a>  
 
-Email : todd.werelius@mopholo.com
+email : todd.werelius@mopholo.com
 
 ## License 
 
